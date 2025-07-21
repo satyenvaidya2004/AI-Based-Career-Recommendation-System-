@@ -4,4 +4,3 @@ pandas
 numpy
 scikit-learn
 requests
-web: gunicorn app:app
