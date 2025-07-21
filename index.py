@@ -15,7 +15,6 @@ int_enc = pickle.load(open("interests_encoder.pkl", "rb"))
 edu_options = ["Bachelor's", "Master's", "PhD"]
 
 # ---------- Custom CSS ----------
-# ---------- Custom CSS ----------
 st.markdown("""
     <style>
     /* General Background */
@@ -81,7 +80,7 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("📘 About")
     st.info("This AI-powered app recommends careers based on your profile using machine learning.")
-    st.markdown("💬 Need Help?\n- Email: `career@aiexpert.com`\n- GitHub: [github.com/yourrepo](https://github.com)")
+    st.markdown("💬 Need Help?\n- Email: `satyenvaidya2004@gmail.com`\n- GitHub: [github.com/AI-Based-Career-Recommendation-System-](satyenvaidya2004/AI-Based-Career-Recommendation-System-)")
 
 # ---------- Input Form ----------
 with st.form("career_form"):
