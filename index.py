@@ -80,7 +80,7 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("📘 About")
     st.info("This AI-powered app recommends careers based on your profile using machine learning.")
-    st.markdown("💬 Need Help?\n- Email: `satyenvaidya2004@gmail.com`\n- GitHub: [github.com/AI-Based-Career-Recommendation-System-](satyenvaidya2004/AI-Based-Career-Recommendation-System-)")
+    st.markdown("💬 Need Help?\n- Email: `satyenvaidya2004@gmail.com`\n- GitHub: [github.com/AI-Based-Career-Recommendation-System-](https://github.com/satyenvaidya2004/AI-Based-Career-Recommendation-System-)")
 
 # ---------- Input Form ----------
 with st.form("career_form"):
