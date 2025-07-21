@@ -118,7 +118,8 @@ if submitted:
         with st.spinner("🧠 Generating your career recommendation..."):
             try:
                 response = requests.post(
-                    response = requests.post("https://career-backend.onrender.com/predict", json=predicted_career),
+                    API_URL = "https://flask-api.onrender.com/predict
+                    response = requests.post(API_URL, json={"input": user_input}),
                     json={
                         "name": name,
                         "age": age,
