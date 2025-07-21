@@ -110,7 +110,7 @@ def deterministic_seed(user_input):
     hash_str = f"{name}-{age}-{education}-{','.join(skills)}-{','.join(interests)}"
     return int(hashlib.sha256(hash_str.encode('utf-8')).hexdigest(), 16) % (10**8)
 
-API_URL = "https://ai-based-career-recommendation-system.onrender.com"
+API_URL = "https://ai-based-career-recommendation-system.onrender.com/predict"
 # ---------- Output ----------
 if submitted:
     if not name or not education or not skills or not interests:
