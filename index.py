@@ -110,6 +110,7 @@ def deterministic_seed(user_input):
     hash_str = f"{name}-{age}-{education}-{','.join(skills)}-{','.join(interests)}"
     return int(hashlib.sha256(hash_str.encode('utf-8')).hexdigest(), 16) % (10**8)
 
+API_URL = "https://ai-based-career-recommendation-system.onrender.com",
 # ---------- Output ----------
 if submitted:
     if not name or not education or not skills or not interests:
@@ -117,9 +118,8 @@ if submitted:
     else:
         with st.spinner("🧠 Generating your career recommendation..."):
             try:
-                response = requests.post(
-                    API_URL = "https://ai-based-career-recommendation-system.onrender.com",
-                    response = requests.post(API_URL, json={"input": user_input})
+                 response = requests.post(
+                    API_URL,
                     json={
                         "name": name,
                         "age": age,
