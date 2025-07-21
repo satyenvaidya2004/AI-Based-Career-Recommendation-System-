@@ -118,7 +118,7 @@ if submitted:
         with st.spinner("🧠 Generating your career recommendation..."):
             try:
                 response = requests.post(
-                    "http://127.0.0.1:5000/predict",
+                    response = requests.post("http://localhost:5000/predict", json=data),
                     json={
                         "name": name,
                         "age": age,
