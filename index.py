@@ -118,7 +118,7 @@ if submitted:
         with st.spinner("🧠 Generating your career recommendation..."):
             try:
                 response = requests.post(
-                    response = requests.post("https://career-backend.onrender.com/predict", json=data),
+                    response = requests.post("https://career-backend.onrender.com/predict", json=predicted_career),
                     json={
                         "name": name,
                         "age": age,
