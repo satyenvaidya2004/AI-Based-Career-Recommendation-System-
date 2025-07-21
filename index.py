@@ -118,7 +118,7 @@ if submitted:
     else:
         with st.spinner("🧠 Generating your career recommendation..."):
             try:
-                 response = requests.post(
+                response = requests.post(
                     API_URL,
                     json={
                         "name": name,
@@ -129,6 +129,7 @@ if submitted:
                     }
                 )
                 result = response.json()
+
 
                 if "career" in result:
                     recommended_career = result['career']
