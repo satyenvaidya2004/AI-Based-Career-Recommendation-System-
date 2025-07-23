@@ -161,8 +161,15 @@ if submitted:
                         st.bar_chart(skill_df.set_index("Skill"))
 
                     with st.expander("📌 Interest Spread"):
-                        fig1, ax1 = plt.subplots()
-                        ax1.pie(interest_scores.values(), labels=interest_scores.keys(), autopct='%1.1f%%', startangle=90)
+                        fig1, ax1 = plt.subplots(figsize=(6, 6))
+                        # Set black background for figure and axes
+                        fig1.patch.set_facecolor('black')
+                        ax1.set_facecolor('black')
+                        # Choose a colormap and get colors
+                        colors = plt.cm.plasma(np.linspace(0, 1, len(interest_scores)))
+                        # Create the pie chart
+                        wedges, texts, autotexts = ax1.pie(interest_scores.values(),labels=interest_scores.keys(),autopct='%1.1f%%',startangle=90,colors=colors,textprops={'color': 'white'})
+                        # Make the pie chart a circle
                         ax1.axis('equal')
                         st.pyplot(fig1)
 
@@ -176,10 +183,16 @@ if submitted:
                     with st.expander("🏆 Top 5 Matches"):
                         top_df = pd.DataFrame(top_careers.items(), columns=["Career", "Probability"])
                         top_df = top_df.sort_values("Probability", ascending=True)
-                        fig2, ax2 = plt.subplots()
-                        ax2.barh(top_df["Career"], top_df["Probability"], color="#2980b9")
-                        ax2.set_xlabel("Match Probability (%)")
-                        ax2.set_title("Best Career Matches")
+                        fig2, ax2 = plt.subplots(figsize=(8, 5))
+                        # Set background colors
+                        fig2.patch.set_facecolor('black')
+                        ax2.set_facecolor('black')
+                        # Customize bar chart
+                        bars = ax2.barh(top_df["Career"], top_df["Probability"], color=plt.cm.viridis(top_df["Probability"]))
+                        # Customize axis and title colors
+                        ax2.set_xlabel("Match Probability (%)", color='white')
+                        ax2.set_title("Best Career Matches", color='white')
+                        ax2.tick_params(colors='white')
                         st.pyplot(fig2)
 
                 else:
